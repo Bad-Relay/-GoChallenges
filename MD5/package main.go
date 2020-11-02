@@ -1,14 +1,13 @@
-package main
+package kata
+import (
+  "crypto/md5"
+  "encoding/hex"
+)
 
-import "fmt"
+func PassHash(str string) string {
+  hash := md5.Sum([]byte(str))
+  result := hex.EncodeToString(hash[:])
 
-var g int
+  return result
 
-func main() {
-
-	for i := 1; i <= 100; i++ {
-
-		fmt.Println(i)
-
-	}
 }
